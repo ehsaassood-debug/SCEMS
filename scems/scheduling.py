@@ -37,7 +37,7 @@ class EventScheduler:
             raise ValueError("Time must be in HH:MM format")
         if start >= end:
             raise ValueError("Start time must be before end time")
-        if capacity <= 0:
+        if capacity < 0:
             raise ValueError("Capacity must be greater than zero")
 
         for existing in self.events.values():
