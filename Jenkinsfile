@@ -1,6 +1,12 @@
-// Jenkins pipeline for SCEMS (CI-10: Build & Deployment Scripts)
+
+ // Jenkins pipeline for SCEMS (CI-10: Build & Deployment Scripts)
 pipeline {
     agent any
+
+    environment {
+        PYTHON_HOME = 'C:\\Users\\ehsaa\\AppData\\Local\\Programs\\Python\\Python312'
+        PATH = "${PYTHON_HOME};${PYTHON_HOME}\\Scripts;${env.PATH}"
+    }
 
     triggers {
         // Check GitHub for new commits every ~2 minutes
